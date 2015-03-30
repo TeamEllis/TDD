@@ -103,5 +103,9 @@ public class TestConvert {
 	public void test_num2text_vingtEtUn() {
 		Assert.assertEquals("vingt-et-un", Convert.num2text("21"));
 	}
+	@Test
+	public void test_num2text_vingkiji() {
+		Assert.assertEquals("quatre-vingt-dix-neuf", Convert.num2text("99"));
+	}
 	
 }

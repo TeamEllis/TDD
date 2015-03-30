@@ -27,15 +27,24 @@ public class Convert {
 		DicoFr.put("40","quarante");
 		DicoFr.put("50","cinquante");
 		DicoFr.put("60","soixante");
+		DicoFr.put("80","quatre-vingt");
 	}
 
 	public static String num2text(String input) {
 		int nbr=Integer.parseInt(input);
 		if(nbr<17 || nbr==20 ||nbr==30 ||nbr==40 ||nbr==50||nbr==60)
 			return DicoFr.get(input);
-		else if(nbr==21 ||nbr==31||nbr==41||nbr==51||nbr==61 ||nbr==71||nbr==81 ||nbr==91)
-			return DicoFr.get(""+(nbr/10)*10)+"-"+"et"+"-"+DicoFr.get((""+(nbr-(nbr/10)*10)));
-		
+		else if(nbr==21 ||nbr==31||nbr==41||nbr==51||nbr==61 ||nbr==71)
+			if(nbr<71)
+				return DicoFr.get(""+(nbr/10)*10)+"-"+"et"+"-"+DicoFr.get((""+(nbr-(nbr/10)*10)));
+			else
+				return DicoFr.get(""+(((nbr/10)*10)-10))+"-"+"et"+"-"+DicoFr.get(""+(((nbr-(nbr/10)*10)+10)));
+		else if(nbr>=70&&nbr<=76 || nbr>=90&&nbr<=96)
+			return DicoFr.get(""+(((nbr/10)*10)-10))+"-"+DicoFr.get(""+(((nbr-(nbr/10)*10)+10)));
+		else if(nbr>=77&&nbr<=79 || nbr>=97&&nbr<=99)
+			return DicoFr.get(""+(((nbr/10)*10)-10))+"-dix-"+DicoFr.get((""+(nbr-(nbr/10)*10)));
+		else if(nbr>=80&&nbr<=89)
+			return DicoFr.get(""+(nbr/10)*10)+"-"+DicoFr.get((""+(nbr-(nbr/10)*10)));
 		else
 			return DicoFr.get(""+(nbr/10)*10)+"-"+DicoFr.get((""+(nbr-(nbr/10)*10)));
 		
