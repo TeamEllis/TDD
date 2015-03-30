@@ -22,10 +22,23 @@ public class Convert {
 		DicoFr.put("14","quatorze");
 		DicoFr.put("15","quinze");
 		DicoFr.put("16","seize");
+		DicoFr.put("20","vingt");
+		DicoFr.put("30","trente");
+		DicoFr.put("40","quarante");
+		DicoFr.put("50","cinquante");
+		DicoFr.put("60","soixante");
 	}
 
 	public static String num2text(String input) {
-		return DicoFr.get(input);
+		int nbr=Integer.parseInt(input);
+		if(nbr<17 || nbr==20 ||nbr==30 ||nbr==40 ||nbr==50||nbr==60)
+			return DicoFr.get(input);
+		else if(nbr<20){
+			return DicoFr.get("10")+"-"+DicoFr.get((""+(nbr-10)));
+		}
+		
+		else{return null;}
+		
 	}
 		
 	public static String text2num(String input) {
