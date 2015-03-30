@@ -4,6 +4,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+@SuppressWarnings("deprecation")
 public class TestConvert {
 	@Test
 	public void test_num2text_zero () {
