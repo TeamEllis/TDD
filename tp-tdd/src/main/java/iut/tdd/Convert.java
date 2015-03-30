@@ -22,15 +22,11 @@ public class Convert {
 		DicoFr.put("14","quatorze");
 		DicoFr.put("15","quinze");
 		DicoFr.put("16","seize");
-	
 	}
-	
 
 	public static String num2text(String input) {
 		return DicoFr.get(input);
-		
 	}
-		
 		
 	public static String text2num(String input) {
 		if(input.equals("zéro"))
