@@ -33,6 +33,9 @@ public class Convert {
 		int nbr=Integer.parseInt(input);
 		if(nbr<17 || nbr==20 ||nbr==30 ||nbr==40 ||nbr==50||nbr==60)
 			return DicoFr.get(input);
+		else if(nbr==21 ||nbr==31||nbr==41||nbr==51||nbr==61 ||nbr==71||nbr==81 ||nbr==91)
+			return DicoFr.get(""+(nbr/10)*10)+"-"+"et"+"-"+DicoFr.get((""+(nbr-(nbr/10)*10)));
+		
 		else
 			return DicoFr.get(""+(nbr/10)*10)+"-"+DicoFr.get((""+(nbr-(nbr/10)*10)));
 		
